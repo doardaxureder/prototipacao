@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <style>
+     body { 
+        font-family: Arial, sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        background-color: #f0f0f0; 
+    } 
+        .container { width: 80%; justify-content: center; align-items: center; margin: 10vw auto; padding: 20px; background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); } 
+        .menu { background-color: #333; color: #fff; padding: 10px; display: flex; justify-content: space-between; margin-bottom: 20px; } 
+        .menu select { background-color: #fff; color: #333; padding: 5px; border: none; border-radius: 5px; cursor: pointer; } 
+        .sigaa { display: flex; justify-content: center; align-items: center; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; } 
+        .student-info { display: flex; align-items: center; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; justify-content: center; } 
+        .student-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-right: 20px; } 
+        
+        #button { 
+            background-color: #333; 
+            color: #fff; 
+            padding: 5px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; } 
+        #button:hover { background-color: #282828; transform: scale(1.1); } 
+        #log-out { margin: 0; background-color: #333; color: #fff; padding: 5px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 10px; margin-top: 5px; margin-left:95%; } 
+        #log-out:hover { background-color: #282828; transform: scale(1.1); }
+        .login { display: flex; flex-direction: column; align-items: center; } 
+        .login form input[type="text"], .login form input[type="password"] { width: 500px; height: 100%; box-sizing: border-box; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; } 
+        .entrar { 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #333; 
+            color: #fff; 
+            padding: 5px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        } 
+        .button { display: flex; width: 50%; justify-content: center; align-items: center; background-color: #333; color: #fff; padding: 5px; border: none; border-radius: 5px; cursor: pointer; } 
+        .button:hover { background-color: #282828; transform: scale(1.1); } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="log-out">
+            <a href="index.html"><button id="log-out">Log out</button></a>
+        </div>
+        <div class="menu">
+           
+        </div>
+        <div class="sigaa">IFRS - SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas
+        </div>
+        <div class="student-info"> 
+            <div class="login">
+            
+                <form>
+                    <label for="username">Usuário:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="password">Senha:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                </form>
+            </div>
+        </div>
+        <div class="entrar">
+            <a href="Paginal_Inicial_professor.html" class="button">Entrar</a>
+        </div>
+
+    </div>
+</body>
+
+</html>

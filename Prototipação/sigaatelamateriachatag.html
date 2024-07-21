@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigaa - DIsciplina: Turma</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: ghostwhite;
+        }
+
+        .container{
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .topo2{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            background-color: #333;
+            height: 45px;
+        }
+
+        .aaa5{
+            margin-top: 5px;
+            margin-left: 10px;
+            font-family: arial, sans-serif;
+            color: white;
+            font-size: 15px;
+        }
+
+        .aaa6{
+            margin-top: 12px;
+            margin-left: 690px;
+        }
+
+        .aaa7{
+            margin-top: 12px;
+            margin-left: 10px;
+        }
+
+        .aaa8{
+            margin-top: 15px;
+            margin-left: 10px;
+            color: white;
+            font-family: arial, sans-serif;
+        }
+
+        .aaa9{
+            margin-top: 12px;
+            margin-left: 10px;
+        }
+
+        button{
+            height: 25px;
+            margin-top: 13px;
+            background-color: #333;
+            border-style: hidden;
+        }
+
+        button:hover{
+            color: #bbbbbb;
+        }
+
+        h2{
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .principal{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border: 2px solid #333; /* Define uma borda sólida de 2px em todos os lados da div */
+            border-top: none; /* Remove a borda superior */
+            border-left: none;
+            border-right: none;
+            height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 20px;
+        }
+
+        .principal2{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .menua {
+            margin-left: 15px;
+            font-size: 16px;
+        }
+
+        .menu2 {
+            margin-left: 15px;
+            font-size: 15px;
+        }
+
+        .menuaaa{
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        
+        .menu{
+            margin-left: 15px;
+            font-size: 16px;
+        }
+
+        main{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .menulateral{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .bbb{
+            background-color: white;
+        }
+
+        .tudojunto{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tituloturma{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+        }
+
+        .progress-bar {
+            width: 300px; /* largura desejada da barra de progresso */
+            height: 20px; /* altura desejada da barra de progresso */
+            background-color: #f0f0f0; /* cor de fundo da barra de progresso */
+            border-radius: 10px; /* para arredondar as bordas */
+            overflow: hidden; /* para esconder o conteúdo que ultrapassa os limites da barra */
+            margin-right: 10px; /* margem à direita para separar a barra do texto */
+        }
+
+        .progress {
+            height: 100%; /* altura total da barra de progresso */
+            background-color: #4caf50; /* cor da barra de progresso */
+        }
+
+        .progress-text {
+            font-size: 14px; /* tamanho da fonte do texto de progresso */
+            color: #000; /* cor do texto de progresso */
+        }
+
+        .tituloaulas{
+            margin-left: 50px;
+        }
+
+        .noticia{
+            margin-left: 60px;
+        }
+
+        .tturma{
+            margin-left: 25px;
+        }
+
+        .nomes{
+            margin-left: 40px;
+        }
+
+        .AAA{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .prof{
+            margin-left: 650px;
+        }
+
+        .BBBB{
+            background-color: #938f8f;
+            border-radius: 5px;
+            margin-left: 5px;
+            color: #f0f0f0;
+        }
+
+        .previous{
+            margin-left: 350px;
+            width: 400px;
+            height: 400px;
+        }
+
+        .tf{
+            margin-left: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="topo2">
+                <p class="aaa5"><b>Nome do Aluno<br>
+                Tipo/modalidade e Nome do Curso</b></p>
+                <button class="aaa6" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-printer" viewBox="0 0 16 16">
+                    <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+                    <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1"/>
+                </svg>
+                </button>
+                <button class="aaa7" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+                </button>
+                <p class="aaa8"><b>Trocar de Turma</b></p>
+                <button class="aaa9" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                </svg>
+                </button>
+            </div>
+        </header>
+        <h2>000XX - Nome da disciplina</h2>
+        <main>
+            <div class="menulateral">
+                <h3 class="tituloturma">Menu Turma Virtual</h3>
+                <a href='sigaatelamateriarincipal.html'><button class="bbb"><b>Principal</b></button></a>
+                <a href='sigaatelamateriaturma.html'><button class="bbb"><b>Turma</b></button></a>
+                <a href='sigaatelamateriapde.html'><button class="bbb"><b>Plano de Ensino</b></button></a>
+                <a href='sigaatelamateriaforum.html'><button class="bbb"><b>Fóruns</b></button></a>
+                <a href='sigaatelamateriachatt.html'><button class="bbb"><b>Chat da Turma</b></button></a>
+                <a href='sigaatelamateriachatag.html'><button class="bbb"><b>Chats Agendados</b></button></a>
+                <a href='sigaatelamateriaest.html'><button class="bbb"><b>Estatística</b></button></a>
+            </div>
+                
+            <div class="tudojunto">
+                <div class="principal">
+                    <div class="menuaaa"><a href="sigaatelamateria2a.html"><h3>Andamento das Aulas</h3></a></div>
+                    <div class="menu"><a href="sigaatelamateria2c.html"><h3>Enquetes</h3></a></div>
+                    <div class="menu"><a href="sigaatelamateria2d.html"><h3>Atividades</h3></a></div>
+                    <div class="menu"><a href="sigaatelamateria2e.html"><h3>Avaliações</h3></a></div>
+                    <div class="menu"><a href="sigaatelamateria2f.html"><h3>Avisos</h3></a></div>
+                    <div class="menua"><a href="sigaatelamateria2g.html"><h3>Calendário</h3></a></div>
+                    <div class="menu"><a href="sigaatelamateria2h.html"><h3>Projetos</h3></a></div>
+                    <div class="menu2"><a href="sigaatelamateria2.html"><h3>Tópicos</h3></a></div>
+                </div>  
+                <div class="principal2">
+                    <div class="tturma">
+                        <h2>Chats Agendados</h2>
+                        <div class="AAA">
+                            <div>
+                                <input type="text" placeholder="solicitar agendamento">
+                                <button class="BBBB">Enviar</button><br>
+                            
+                                <div class="AAA">
+                                    <h3>Chats agendados anteriormente</h3>
+                                    <button class="BBBB">Visualizar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>

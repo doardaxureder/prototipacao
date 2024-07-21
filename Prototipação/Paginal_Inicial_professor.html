@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Information</title>
+    <style>
+        input[type="text"] {
+    width: 100%; /* Define a largura da caixa de texto para ocupar todo o espaço disponível */
+    padding: 8px; /* Adiciona um preenchimento interno de 8px */
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida com a cor cinza */
+    border-radius: 5px; /* Adiciona um raio de borda de 5px para arredondar as bordas */
+    box-sizing: border-box; /* Garante que o tamanho total da caixa de texto inclua o preenchimento e a borda, evitando que a largura seja aumentada pela borda ou preenchimento */
+    margin-top: 5px; /* Adiciona uma margem superior de 5px para separar dos elementos acima */
+    margin-bottom: 5px; /* Adiciona uma margem superior de 5px para separar dos elementos acima */
+
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .menu select, .menu a, .menu button {
+            background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 10px;
+            flex-grow: 1; /* Permitir que cresçam proporcionalmente */
+            max-width: calc(20% - 20px); /* Ajuste o valor conforme necessário para evitar que os elementos saiam da tela */
+            box-sizing: border-box;
+        }
+        .menu select {
+            background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #menu-button{
+            background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        
+
+        .no-news {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .student-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #button{
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;        
+          }
+         
+            #button:hover {
+            background-color: #282828; 
+            transform: scale(1.1); 
+        }
+
+        #showDisciplinas{
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        #showDisciplinas:hover {
+            background-color: #282828; 
+            transform: scale(1.1); 
+        }
+
+        #button-upload{
+          background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;        
+          }
+
+          #button-upload:hover {
+            background-color: #e1e1e1; 
+            transform: scale(1.1); 
+        }
+
+        #log-out{
+          background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;    
+            margin-bottom: 10px;  
+            margin-top: 5px;  
+            margin-left: 94%; 
+          }
+            #log-out:hover {
+            background-color: #282828; /* Altera a cor de fundo ao passar o mouse */
+            transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="log-out"> 
+            <a href="index.html"><button id="log-out">Log out</button></a>
+
+        </div>
+        <div class="menu">
+             <select onchange="navigateTo(this.value)">
+                
+                <option>Alunos</option>
+                <option value="Comunicacao_Com_Aluno.html">Comunicação com Aluno</option>
+                <option value="Disponilizar_Material.html">Disponilizar Material</option>
+                <option value="Lancamento_Notas.html">Lançamento de Notas</option>
+                <option value="Lancamento_Frequencia.html">Lançamento de Frequencia</option>
+                <option value="Horarios_Aula.html">Horários de Aula</option>
+            </select>
+            <select onchange="navigateTo(this.value)">
+                <option>Aulas</option>
+                <option value="Atividades_Alunos.html">Atividades e Exercicios</option>
+                <option value="Correcacao_Atividades.html">Correção e Feedback de Atividades</option>
+
+            </select>
+            
+            <select onchange="navigateTo(this.value)">
+                <option>Parte Tecnica</option>
+                <option>Bibliografia</option>
+                <option>Gerenciamento de Fóruns</option>
+                <option>Suporte Técnico     </option>
+            </select>
+            <select onchange="navigateTo(this.value)">
+                <option>Bolsas/Estagios</option>
+                <option value="Gerenciamento_Bolsas.html">Gerenciamento Bolsa</option>
+                <option value="Gerenciamento_Estagio.html">Gerenciamento Estagios</option>
+            </select>
+           
+            
+                        <a href="https://biblioteca.ifrs.edu.br/" target="_blank" id="menu-button">Ir para a biblioteca</a>
+
+                <button id="menu-button">Mudar Senha </button>
+
+        </div>
+        <div class="no-news">Não tem noticia cadastrada não, sai fora</div>
+        <div class="student-info">
+            <img class="student-photo" src="https://i.pinimg.com/236x/da/28/07/da2807745b55164d363553241768634a.jpg" alt="Student photo">
+            <div>
+                <h3>Bem-Vindo Nome do Professor!</h3>
+                <p>Matricula: 2022300769</p>
+                <p>Nivel: Doutorado e Mestrado Completos</p>
+                <p>Status: ATIVO</p>
+                <p>Email: professorgirafales@gmail.com</p>
+                <button id="button">Alterar foto de perfil</button>
+            </div>
+        </div>
+        <div class="subject-info">
+          <h3>Ultimas Atualizações</h3>
+          <table>
+              <tr>
+                  <th><form>
+                    <label for="texto">Inserir Atualizações:</label><br>
+                    <input type="text" id="texto" name="texto"><br>
+                    <input id="button-upload" type="button" value="Enviar">
+                  </form>
+                  </th>
+                  
+              </tr>
+                        </table>
+      </div>
+      <body>
+            <div id="disciplinas" style="display: none;">
+                <div class="subject-info">
+                    <h3>Disciplinas</h3>
+                    <table>
+                        <tr>
+                            <th>Disciplina</th>
+                            <th>Turma</th>
+                            <th>Horario</th>
+                        </tr>
+                        <tr>
+                            <td>Banco de dados</td>
+                            <td>2c</td>
+                            <td>2024-04-10</td>
+                        </tr>
+                        <tr>
+                            <td>Back end</td>
+                            <td>3c</td>
+                            <td>2024-04-11</td>
+                        </tr>
+                        <tr>
+                            <td>Front-end</td>
+                            <td>2c</td>
+                            <td>2024-04-11</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- Botão para mostrar as disciplinas -->
+            <button id="showDisciplinas">Mostrar Disciplinas</button>
+        </div>
+    
+        <!-- Seu código JavaScript aqui -->
+        <script>
+            function navigateTo(value) {
+            if (value) {
+                window.location.href = value;
+            }
+        }
+            document.getElementById("showDisciplinas").addEventListener("click", function() {
+                var disciplinas = document.getElementById("disciplinas");
+                if (disciplinas.style.display === "none") {
+                    disciplinas.style.display = "block";
+                    this.textContent = "Ocultar Disciplinas";
+                } else {
+                    disciplinas.style.display = "none";
+                    this.textContent = "Mostrar Disciplinas";
+                }
+            });
+
+            
+        </script>
+    </div>
+</body>
+</html>

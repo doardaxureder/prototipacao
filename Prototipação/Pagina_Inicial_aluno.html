@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .menu select {
+            background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #menu-button{
+             background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .no-news {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .student-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #button{
+          background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;        
+          }
+            #button:hover {
+            background-color: #282828; 
+            transform: scale(1.1); 
+        }
+
+        #log-out{
+          background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;    
+            margin-bottom: 10px;  
+            margin-top: 5px;  
+            margin-left: 94%; 
+          }
+            #log-out:hover {
+            background-color: #282828; /* Altera a cor de fundo ao passar o mouse */
+            transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="log-out"> 
+            <a href="index.html"><button id="log-out">Log out</button></a>
+
+        </div>
+        <div class="menu">
+            <select onchange="navigateTo(this.value)">
+                <option>Ensino</option>
+                <option value="Boletim_Aluno.html">Emitir Boletim</option>
+                <option value="Atestado_Matricula.html">Emitir Atestado de Matricula</option>
+                <option>Emitir Historico</option>
+                <option>Emitir Historico com Ementa</option>
+                <option>Emitir Declaração de vinculo</option>
+                <option value="Calendario_Tri.html">Calendario Academico</option>
+                <option value="Comunicados_Importantes.html">Comunicados Importantes</option>
+            </select>
+            <select onchange="navigateTo(this.value)">
+                <option>Perfil  do Professor</option>
+                <option value="Comunicacao_Com_Professor.html">Comunicação com Professor</option>
+                <option value="Atendimentos_Alunos.html">Atendimentos</option>
+                
+            </select>
+            <select onchange="navigateTo(this.value)">
+                <option>Bolsas Escolares</option>
+                <option value="Bolsa_de_Ensino_Aluno.html">Bolsas de Ensino</option>
+                <option value="Bolsa_de_Pesquisa_Aluno.html">Bolsas de pesquisa</option>
+                <option value="Bolsa_de_Extensão_Aluno.html">Bolsas de Extensão</option>
+
+                
+            </select>
+            <a href="https://biblioteca.ifrs.edu.br/" target="_blank" id="menu-button">Ir para a biblioteca</a>
+
+                <a href="Transferencia_Aluno.html"><button id="menu-button">Pedir Transferencia </button></a>
+                <a href="Mudar_Senha.html"><button id="menu-button">Mudar Senha </button></a>
+
+        </div>
+        <div class="no-news">Não tem noticia cadastrada não, sai fora</div>
+        <div class="student-info">
+            <img class="student-photo" src="https://i.pinimg.com/564x/ef/00/6b/ef006bd2373a2da64ebec7a2d6ab8ef5.jpg" alt="Student photo">
+            <div>
+                <h3>Bem-Vindo Nome do estudante!</h3>
+                <p>Matricula: 2022300769</p>
+                <p>Curso: TÉCNICO EM INFORMÁTICA PARA INTERNET</p>
+                <p>Nivel: TÉCNICO INTEGRADO</p>
+                <p>Status: ATIVO</p>
+                <p>Email: schroedereduarda17@gmail.com</p>
+                <button id="button">Alterar foto de perfil</button>
+            </div>
+        </div>
+        <div class="subject-info">
+          <h3>Ultimas Atualizações</h3>
+          <table>
+              <tr>
+                  <th>Atualizações caso o professor tenha inserido algo no sigaa</th>
+                  
+              </tr>
+                        </table>
+      </div>
+        <div class="subject-info">
+            <h3>Disciplinas</h3>
+            <table>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Turma</th>
+                    <th>Horario</th>
+                </tr>
+                <tr>
+                    <td> <a href="sigaatelamateria2.html"> Biologia </a></td>
+                    <td>3c</td>
+                    <td>(19/02/2024 - 06/12/2024)</td>
+                </tr>
+                <tr>
+                    <td>Matematica</td>
+                    <td>3c</td>
+                    <td>(19/02/2024 - 06/12/2024)</td>
+                </tr>
+                <tr>
+                    <td>Historia</td>
+                    <td>3c</td>
+                    <td>(19/02/2024 - 06/12/2024)</td>
+                </tr>
+                
+                <tr>
+                    <td>Geografia</td>
+                    <td>3c</td>
+                    <td>(19/02/2024 - 06/12/2024)</td>
+                </tr>
+                
+                <tr>
+                    <td>Back-nd</td>
+                    <td>3c</td>
+                    <td>(19/02/2024 - 06/12/2024)</td>
+                </tr>
+                
+                
+                
+                
+            </table>
+        </div>
+    </div>
+    <script>
+        function navigateTo(value) {
+            if (value) {
+                window.location.href = value;
+            }
+        }
+        document.getElementById("showDisciplinas").addEventListener("click", function() {
+                var disciplinas = document.getElementById("disciplinas");
+                if (disciplinas.style.display === "none") {
+                    disciplinas.style.display = "block";
+                    this.textContent = "Ocultar Disciplinas";
+                } else {
+                    disciplinas.style.display = "none";
+                    this.textContent = "Mostrar Disciplinas";
+                }
+            });
+    </script>
+</body>
+</html>

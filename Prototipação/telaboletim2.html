@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigaa - Boletim</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: ghostwhite;
+        }
+
+        .container{
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .topo2{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            background-color: #333;
+            height: 45px;
+        }
+
+        .pp{
+            color: white;
+            font-family: arial, sans-serif;
+        }
+
+        .aaa5{
+            margin-top: 5px;
+            margin-left: 10px;
+            font-family: arial, sans-serif;
+            color: white;
+            font-size: 15px;
+        }
+
+        .aaa6{
+            margin-top: 12px;
+            margin-left: 690px;
+        }
+
+        .aaa7{
+            margin-top: 12px;
+            margin-left: 10px;
+        }
+
+        .aaa8{
+            margin-top: 15px;
+            margin-left: 10px;
+            color: white;
+            font-family: arial, sans-serif;
+        }
+
+        .aaa9{
+            margin-top: 12px;
+            margin-left: 10px;
+        }
+        .b1{
+            height: 25px;
+            margin-top: 13px;
+            color: white;
+            background-color: #333;
+            border-style: hidden;
+        }
+
+        button{
+            height: 25px;
+            margin-top: 13px;
+            background-color: #bbbbbb;
+            border-style: hidden;
+        }
+
+        button:hover{
+            color: antiquewhite;
+        }
+
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #000000;
+        }
+
+        .boletim {
+            display: flex;
+            flex-direction: column; /* Define o container como um flex container */
+            justify-content: center; /* Alinha os itens no centro horizontalmente */
+            align-items: center; /* Alinha os itens no centro verticalmente */
+            background-color: white;
+            position: relative; /* Alterado para relativo para ajustar ao tamanho do container */
+            width: 100%; /* Define a largura do boletim para 100% do container */
+            max-width: 1000px; /* Define uma largura máxima para o boletim */
+            margin: 0 auto; /* Centraliza o boletim horizontalmente */
+        }
+
+        .dadostitulo{
+            background-color: #333;
+            width: 100%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            height: 40px;
+        }
+
+        h3{
+            margin-top: 10px;
+        }
+
+        .dados{
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .dadinhos{
+            margin-right: 200px;
+        }
+
+        .componentestitulo{
+            background-color: #333;
+            width: 100%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            height: 40px;
+        }
+
+        table{
+            border: 1px solid black;
+            margin: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .faltas{
+            background-color: #bbbbbb;
+            border: 1px solid black;
+            margin: 0px 10px 10px 10px;
+            width: 200px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .textinho {
+            margin: 5px;
+        }
+
+        button{
+            height: 25px;
+            margin-top: 13px;
+            background-color: #333;
+            border-style: hidden;
+        }
+
+        a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            color: #333;
+        }
+
+        a:hover{
+            color: #696969;
+        }
+
+        .voltar{
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="topo2">
+                <p class="aaa5"><b>Nome do Aluno<br>
+                Tipo/modalidade e Nome do Curso</b></p>
+                <button class="aaa6" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-printer" viewBox="0 0 16 16">
+                    <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+                    <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1"/>
+                </svg>
+                </button>
+                <button class="aaa7" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+                </button>
+                <p class="aaa8"><b>Trocar de Turma</b></p>
+                <button class="aaa9" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                </svg>
+                </button>
+            </div>
+        </header>
+        <main>
+            <div class="titulo"><h1>Boletim Escolar - Ano</h1></div>
+            <div class="boletim">
+                <div class="dadostitulo">
+                    <h3>Dados do Aluno</h3>
+                </div>
+                <div class="dados">
+                    <div class="dadinhos">
+                        <p><b>Aluno(a): <br>     
+                        Turma de Entrada: <br>    
+                        Situação:           
+                        </b></p>
+                    </div>
+                    <div class="dadinhos">
+                        <p><b>Matrícula: <br>
+                        Ano: <br>
+                        Série:
+                        </b></p>
+                    </div>
+                </div>
+                <div class="componentestitulo">
+                    <h3>Dados dos Componentes Curriculares</h3>
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid black;">Componente Curricular</th>
+                                <th style="border: 1px solid black;">Nota do 1° Tri/Bi</th>
+                                <th style="border: 1px solid black;">Rec. Paralela <br>NT1</th>
+                                <th style="border: 1px solid black;">Nota do 2° Tri/Bi</th>
+                                <th style="border: 1px solid black;">Rec. Paralela <br>NT2</th>
+                                <th style="border: 1px solid black;">Nota do 3° Tri/Bi</th>
+                                <th style="border: 1px solid black;">Rec. Paralela <br>NT3</th>
+                                <th style="border: 1px solid black;">Prova Final (exame)</th>
+                                <th style="border: 1px solid black;">Faltas</th>
+                                <th style="border: 1px solid black;">Final</th>
+                                <th style="border: 1px solid black;">Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 1</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 2</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 3</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 4</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 5</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 6</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 7</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 8</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 9</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">Matéria 10</td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="faltas">
+                    <p class="textinho">Total de faltas: <br>
+                        Percentual de Faltas:</p>
+                </div>
+                <div class="voltar">
+                    <a href="">Voltar ao início</a>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>

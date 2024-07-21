@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atividades e Exercícios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative; /* Para posicionar os botões */
+    }
+    .navigation {
+      text-align: end;
+      margin-bottom: 10px;
+    }
+    .navigation a {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .navigation img {
+      width: 24px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .navigation button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .navigation button:hover {
+      background-color: #282828;
+      transform: scale(1.05);
+    }
+    .menu {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .menu select, .menu a, .menu button {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px 10px;
+      flex-grow: 1; /* Permitir que cresçam proporcionalmente */
+      max-width: calc(20% - 20px); /* Ajuste o valor conforme necessário para evitar que os elementos saiam da tela */
+      box-sizing: border-box;
+    }
+    .menu select {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #menu-button, #logout-button {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px; /* Espaçamento entre os botões */
+    }
+    #menu-button:hover, #logout-button:hover {
+      background-color: #282828; /* Altera a cor de fundo ao passar o mouse */
+      color: #fff;
+      transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    }
+    #logout-button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    #home-button {
+      position: absolute;
+      right: 60px;
+      top: 10px;
+    }
+    h2 {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    .question p {
+      font-weight: bold;
+    }
+    .question input[type="radio"] {
+      margin-right: 10px;
+    }
+    button[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+    button[type="submit"]:hover {
+      background-color: #282828;
+      transform: scale(1.05);
+    }
+    .additional-info {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .additional-info label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .additional-info input[type="text"], .additional-info input[type="number"], .additional-info select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    .additional-info button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+    .additional-info button:hover {
+      background-color: #282828;
+      transform: scale(1.05);
+    }
+    
+    .navigation {
+            text-align: end;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .navigation img {
+            width: 24px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .navigation button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navigation button:hover {
+            background-color: #282828;
+            transform: scale(1.05);
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navigation">
+        <a href="Paginal_Inicial_professor.html"><img src="Images/botao-home.png" alt="Ícone de casa"></a>
+        <a id="log-out" href="index.html"><button>Log out</button></a>
+    </div>
+    <div class="menu">
+        <select onchange="navigateTo(this.value)">
+           
+           <option>Alunos</option>
+           <option value="Comunicacao_Com_Aluno.html">Comunicação com Aluno</option>
+           <option value="Disponilizar_Material.html">Disponilizar Material</option>
+           <option value="Lancamento_Notas.html">Lançamento de Notas</option>
+           <option value="Lancamento_Frequencia.html">Lançamento de Frequencia</option>
+           <option value="Horarios_Aula.html">Horários de Aula</option>
+       </select>
+       <select onchange="navigateTo(this.value)">
+           <option>Aulas</option>
+           <option value="Atividades_Alunos.html">Atividades e Exercicios</option>
+           <option value="Correcacao_Atividades.html">Correção e Feedback de Atividades</option>
+
+       </select>
+       
+       <select onchange="navigateTo(this.value)">
+           <option>Parte Tecnica</option>
+           <option>Bibliografia</option>
+           <option>Gerenciamento de Fóruns</option>
+           <option>Suporte Técnico     </option>
+       </select>
+       <select onchange="navigateTo(this.value)">
+           <option>Bolsas/Estagios</option>
+           <option value="Gerenciamento_Bolsas.html">Gerenciamento Bolsa</option>
+           <option value="Gerenciamento_Estagio.html">Gerenciamento Estagios</option>
+           <option>Enviar pedido de criação de Bolsa/Estagio</option>
+       </select>
+      
+       
+                   <a href="https://biblioteca.ifrs.edu.br/" target="_blank" id="menu-button">Ir para a biblioteca</a>
+
+           <button id="menu-button">Mudar Senha </button>
+
+   </div
+
+    <h2>Atividades e Exercícios - Biologia</h2>
+    <form id="activity-form">
+      <div class="question">
+        <p>1. Qual é a principal função da mitocôndria?</p>
+        <label><input type="radio" name="q1" value="a"> Produzir proteínas</label><br>
+        <label><input type="radio" name="q1" value="b"> Produzir energia</label><br>
+        <label><input type="radio" name="q1" value="c"> Armazenar DNA</label><br>
+        <label><input type="radio" name="q1" value="d"> Transportar nutrientes</label>
+      </div>
+      <div class="question">
+        <p>2. O que é a fotossíntese?</p>
+        <label><input type="radio" name="q2" value="a"> Processo de respiração</label><br>
+        <label><input type="radio" name="q2" value="b"> Processo de produção de energia em células animais</label><br>
+        <label><input type="radio" name="q2" value="c"> Processo de conversão de luz em energia química</label><br>
+        <label><input type="radio" name="q2" value="d"> Processo de eliminação de resíduos</label>
+      </div>
+      <!-- Adicione mais perguntas aqui -->
+      <div class="question">
+        <p>3. Qual é a unidade básica da vida?</p>
+        <label><input type="radio" name="q3" value="a"> Átomo</label><br>
+        <label><input type="radio" name="q3" value="b"> Célula</label><br>
+        <label><input type="radio" name="q3" value="c"> Molécula</label><br>
+        <label><input type="radio" name="q3" value="d"> Tecido</label>
+      </div>
+      <div class="question">
+        <p>4. O que é o DNA?</p>
+        <label><input type="radio" name="q4" value="a"> Uma proteína</label><br>
+        <label><input type="radio" name="q4" value="b"> Uma célula</label><br>
+        <label><input type="radio" name="q4" value="c"> Um ácido nucleico</label><br>
+        <label><input type="radio" name="q4" value="d"> Um lipídio</label>
+      </div>
+      <div class="question">
+        <p>5. Qual é a principal função do cloroplasto?</p>
+        <label><input type="radio" name="q5" value="a"> Produzir energia</label><br>
+        <label><input type="radio" name="q5" value="b"> Armazenar nutrientes</label><br>
+        <label><input type="radio" name="q5" value="c"> Realizar a respiração celular</label><br>
+        <label><input type="radio" name="q5" value="d"> Realizar a fotossíntese</label>
+      </div>
+      <div class="question">
+        <p>6. O que são ribossomos?</p>
+        <label><input type="radio" name="q6" value="a"> Organelas responsáveis pela fotossíntese</label><br>
+        <label><input type="radio" name="q6" value="b"> Organelas responsáveis pela síntese de proteínas</label><br>
+        <label><input type="radio" name="q6" value="c"> Organelas responsáveis pelo transporte de nutrientes</label><br>
+        <label><input type="radio" name="q6" value="d"> Organelas responsáveis pela respiração celular</label>
+      </div>
+      <div class="question">
+        <p>7. Qual é a função do núcleo celular?</p>
+        <label><input type="radio" name="q7" value="a"> Produzir energia</label><br>
+        <label><input type="radio" name="q7" value="b"> Controlar as atividades celulares e armazenar DNA</label><br>
+        <label><input type="radio" name="q7" value="c"> Transportar substâncias</label><br>
+        <label><input type="radio" name="q7" value="d"> Produzir proteínas</label>
+      </div>
+      <div class="question">
+        <p>8. O que é uma célula procariota?</p>
+        <label><input type="radio" name="q8" value="a"> Célula com núcleo definido e organelas</label><br>
+        <label><input type="radio" name="q8" value="b"> Célula sem núcleo definido</label><br>
+        <label><input type="radio" name="q8" value="c"> Célula com parede celular e cloroplastos</label><br>
+        <label><input type="radio" name="q8" value="d"> Célula com organelas membranosas</label>
+      </div>
+      <div class="question">
+        <p>9. O que é a meioses?</p>
+        <label><input type="radio" name="q9" value="a"> Processo de divisão celular que resulta em duas células-filhas</label><br>
+        <label><input type="radio" name="q9" value="b"> Processo de divisão celular que resulta em quatro células-filhas</label><br>
+        <label><input type="radio" name="q9" value="c"> Processo de duplicação do DNA</label><br>
+        <label><input type="radio" name="q9" value="d"> Processo de formação de células-tronco</label>
+      </div>
+      <div class="question">
+        <p>10. O que é o metabolismo celular?</p>
+        <label><input type="radio" name="q10" value="a"> Processo de troca de gases</label><br>
+        <label><input type="radio" name="q10" value="b"> Conjunto de reações químicas que ocorrem dentro das células</label><br>
+        <label><input type="radio" name="q10" value="c"> Processo de formação de novas células</label><br>
+        <label><input type="radio" name="q10" value="d"> Processo de eliminação de resíduos</label>
+      </div>
+      <button type="submit">Enviar Exercício</button>
+    </form>
+
+    <div class="additional-info">
+      <h2>Informações Adicionais</h2>
+      <form id="additional-form">
+        <label for="course">Curso:</label>
+        <input type="text" id="course" name="course" placeholder="Nome do curso" required>
+        
+        <label for="class-name">Nome da Turma:</label>
+        <input type="text" id="class-name" name="class-name" placeholder="Nome da turma" required>
+        
+        <label for="grade">Nota que vai valer:</label>
+        <input type="number" id="grade" name="grade" placeholder="Nota" required>
+        <label for="grade">Pergunta 1:</label>
+        <input type="number" id="grade" name="grade" placeholder="Nota" required>
+        <button type="submit"> + Pergunta</button>
+
+        <button type="submit">Enviar Novo Exercício</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(url) {
+      if (url) {
+        window.location.href = url;
+      }
+    }
+  </script>
+</body>
+</html>

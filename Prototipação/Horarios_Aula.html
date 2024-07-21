@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agendamento de Aulas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative; /* Para posicionar os botões */
+    }
+    .menu {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .menu select, .menu a, .menu button {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px 10px;
+      flex-grow: 1; /* Permitir que cresçam proporcionalmente */
+      max-width: calc(20% - 20px); /* Ajuste o valor conforme necessário para evitar que os elementos saiam da tela */
+      box-sizing: border-box;
+    }
+    .menu select {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #menu-button, #logout-button {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px; /* Espaçamento entre os botões */
+    }
+    
+    #menu-button:hover, #logout-button:hover {
+      background-color: #282828; /* Altera a cor de fundo ao passar o mouse */
+      color: #fff;
+      transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    }
+
+    #logout-button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    
+    #home-button {
+      position: absolute;
+      right: 60px;
+      top: 10px;
+    }
+    
+    #schedule-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #schedule-table th, #schedule-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    #schedule-table th {
+      background-color: #f0f0f0;
+    }
+
+    #schedule-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .selected {
+      background-color: #ccc;
+    }
+    
+    .navigation {
+            text-align: end;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .navigation img {
+            width: 24px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .navigation button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navigation button:hover {
+            background-color: #282828;
+            transform: scale(1.05);
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navigation">
+        <a href="Paginal_Inicial_professor.html"><img src="Images/botao-home.png" alt="Ícone de casa"></a>
+        <a id="log-out" href="index.html"><button>Log out</button></a>
+    </div>
+    <div class="menu">
+      <select onchange="navigateTo(this.value)">
+         
+         <option>Alunos</option>
+         <option value="Comunicacao_Com_Aluno.html">Comunicação com Aluno</option>
+         <option value="Disponilizar_Material.html">Disponilizar Material</option>
+         <option value="Lancamento_Notas.html">Lançamento de Notas</option>
+         <option value="Lancamento_Frequencia.html">Lançamento de Frequencia</option>
+         <option value="Horarios_Aula.html">Horários de Aula</option>
+     </select>
+     <select onchange="navigateTo(this.value)">
+         <option>Aulas</option>
+         <option value="Atividades_Alunos.html">Atividades e Exercicios</option>
+         <option value="Correcacao_Atividades.html">Correção e Feedback de Atividades</option>
+
+     </select>
+     
+     <select onchange="navigateTo(this.value)">
+         <option>Parte Tecnica</option>
+         <option>Bibliografia</option>
+         <option>Gerenciamento de Fóruns</option>
+         <option>Suporte Técnico     </option>
+     </select>
+     <select onchange="navigateTo(this.value)">
+         <option>Bolsas/Estagios</option>
+         <option value="Gerenciamento_Bolsas.html">Gerenciamento Bolsa</option>
+         <option value="Gerenciamento_Estagio.html">Gerenciamento Estagios</option>
+     </select>
+    
+     
+                 <a href="https://biblioteca.ifrs.edu.br/" target="_blank" id="menu-button">Ir para a biblioteca</a>
+
+         <button id="menu-button">Mudar Senha </button>
+
+    </div>
+    <h2>Agendamento de Aulas</h2>
+    <table id="schedule-table">
+      <thead>
+        <tr>
+          <th>Dia</th>
+          <th>08:00-10:00</th>
+          <th>10:00-12:00</th>
+          <th>14:00-16:00</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Segunda-feira</td>
+          <td>Turma A</td>
+          <td>Turma B</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Terça-feira</td>
+          <td>Turma C</td>
+          <td>Turma D</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Quarta-feira</td>
+          <td>Turma E</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Quinta-feira</td>
+          <td>Turma F</td>
+          <td>Turma G</td>
+          <td>Turma H</td>
+        </tr>
+        <tr>
+          <td>Sexta-feira</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    document.querySelectorAll('#schedule-table tr').forEach((row) => {
+      row.addEventListener('click', (e) => {
+        row.classList.toggle('selected');
+      });
+    });
+
+    function navigateTo(url) {
+      if (url) {
+        window.location.href = url;
+      }
+    }
+  </script>
+</body>
+</html>

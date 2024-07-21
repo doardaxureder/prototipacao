@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .header img, .header button {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .header img {
+            width: 24px;
+            height: auto;
+        }
+        .menu {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .menu select, .menu a, .menu button {
+            background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 10px;
+            flex-grow: 1; /* Permitir que cresçam proporcionalmente */
+            max-width: calc(20% - 20px); /* Ajuste o valor conforme necessário para evitar que os elementos saiam da tela */
+            box-sizing: border-box;
+        }
+        #menu-button {
+            background-color: #fff;
+            color: #333;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #button {
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;        
+        }
+        #button:hover {
+            background-color: #282828; 
+            transform: scale(1.1); 
+        }
+        #log-out {
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;    
+            margin-bottom: 10px;  
+            margin-top: 5px;  
+        }
+        #log-out:hover {
+            background-color: #282828; /* Altera a cor de fundo ao passar o mouse */
+            transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+        }
+        h2 {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        select {
+            padding: 5px;
+            margin-right: 20px;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <a href="Paginal_Inicial_professor.html"><img src="Images/botao-home.png" alt="Ícone de casa"></a>
+        <a id="log-out" href="index.html">Log out</a>
+    </div>
+
+    <div class="menu">
+        <select onchange="navigateTo(this.value)">
+            <option>Alunos</option>
+            <option value="Comunicacao_Com_Aluno.html">Comunicação com Aluno</option>
+            <option value="Disponilizar_Material.html">Disponilizar Material</option>
+            <option value="Lancamento_Notas.html">Lançamento de Notas</option>
+            <option value="Lancamento_Frequencia.html">Lançamento de Frequência</option>
+            <option value="Horarios_Aula.html">Horários de Aula</option>
+        </select>
+        <select onchange="navigateTo(this.value)">
+            <option>Aulas</option>
+            <option>Conteúdo de Aulas</option>
+            <option>Atividades e Exercícios</option>
+            <option>Correção e Feedback de Atividades</option>
+        </select>
+        <select onchange="navigateTo(this.value)">
+            <option>Parte Técnica</option>
+            <option>Bibliografia</option>
+            <option>Gerenciamento de Fóruns</option>
+            <option>Suporte Técnico</option>
+        </select>
+        <select onchange="navigateTo(this.value)">
+            <option>Bolsas/Estágios</option>
+            <option>Gerenciamento Bolsa</option>
+            <option>Gerenciamento Estágios</option>
+            <option>Enviar pedido de criação de Bolsa/Estágio</option>
+        </select>
+        <a href="https://biblioteca.ifrs.edu.br/" target="_blank" id="menu-button">Ir para a biblioteca</a>
+        <button id="menu-button">Mudar Senha</button>
+    </div>
+
+    <h2>Notas dos Alunos</h2>
+
+    <label for="curso">Curso:</label>
+    <select id="curso">
+        <option value="rgd-bio001">Informatica Para a Internet</option>
+        <option value="rgd-edf003">Geoprocessamento</option>
+        <option value="rgd-fis003">Fabricação</option>
+        <option value="rgd-ge0001">Automação</option>
+        <option value="rgd-mat003">Eletro</option>
+        <option value="rgd-por003">Refrigeraçãp</option>
+        
+    </select>
+
+    <label for="turma">Turma:</label>
+    <select id="turma">
+        <option value="1a">1ª</option>
+        <option value="2a">2ª</option>
+        <option value="3a">3ª</option>
+    </select>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Recuperação 1</th>
+                <th>Nota 2</th>
+                <th>Recuperação 2</th>
+                <th>Nota 3</th>
+                <th>Recuperação 3</th>
+                <th>Média</th>
+            </tr>
+        </thead>
+        <tbody id="alunos">
+        </tbody>
+    </table>
+
+    <div class="navigation">
+        <!-- Outros elementos de navegação, se houver -->
+    </div>
+</div>
+
+<script>
+const cursoSelect = document.getElementById("curso");
+const turmaSelect = document.getElementById("turma");
+const alunosTableBody = document.getElementById("alunos");
+
+// Dados dos alunos (exemplo)
+const alunos = {
+    "rgd-bio001": {
+        "1a": ["João", "Maria", "Pedro"],
+        "2a": ["Ana", "Lucas", "Sofia"],
+        "3a": ["Carlos", "Beatriz", "Rafael"]
+    },
+    "rgd-edf003": {
+        "1a": ["Guilherme", "Mariana", "Eduardo"],
+        "2a": ["Alice", "Thiago", "Laura"],
+        "3a": ["Bruno", "Isabela", "Gabriel"]
+    },
+    "rgd-fis003": {
+        "1a": ["Fernanda", "Arthur", "Camila"],
+        "2a": ["Gustavo", "Letícia", "Henrique"],
+        "3a": ["Júlia", "Matheus", "Roberta"]
+    },
+    "rgd-ge0001": {
+        "1a": ["Rafael", "Beatriz", "Carlos"],
+        "2a": ["Sofia", "Lucas", "Ana"],
+        "3a": ["Pedro", "Maria", "João"]
+    },
+    "rgd-mat003": {
+        "1a": ["Eduardo", "Mariana", "Guilherme"],
+        "2a": ["Laura", "Thiago", "Alice"],
+        "3a": ["Gabriel", "Isabela", "Bruno"]
+    },
+    "rgd-por003": {
+        "1a": ["Camila", "Arthur", "Fernanda"],
+        "2a": ["Henrique", "Letícia", "Gustavo"],
+        "3a": ["Roberta", "Matheus", "Júlia"]
+    }
+};
+
+function updateAlunos() {
+    const curso = cursoSelect.value;
+    const turma = turmaSelect.value;
+
+    alunosTableBody.innerHTML = ""; // Limpa a tabela
+
+    const alunosDaTurma = alunos[curso][turma];
+
+    alunosDaTurma.forEach(aluno => {
+        const row = alunosTableBody.insertRow();
+        const nomeCell = row.insertCell();
+        const nota1Cell = row.insertCell();
+        const recup1Cell = row.insertCell();
+        const nota2Cell = row.insertCell();
+        const recup2Cell = row.insertCell();
+        const nota3Cell = row.insertCell();
+        const recup3Cell = row.insertCell();
+        const mediaCell = row.insertCell();
+
+        nomeCell.innerHTML = aluno;
+        nota1Cell.innerHTML = `<input type="number" min="0" max="10" value="0" data-aluno="${aluno}" data-nota="1">`;
+        recup1Cell.innerHTML = `<input type="number" min="0" max="10" value="" data-aluno="${aluno}" data-recup="1">`;
+        nota2Cell.innerHTML = `<input type="number" min="0" max="10" value="0" data-aluno="${aluno}" data-nota="2">`;
+        recup2Cell.innerHTML = `<input type="number" min="0" max="10" value="" data-aluno="${aluno}" data-recup="2">`;
+        nota3Cell.innerHTML = `<input type="number" min="0" max="10" value="0" data-aluno="${aluno}" data-nota="3">`;
+        recup3Cell.innerHTML = `<input type="number" min="0" max="10" value="" data-aluno="${aluno}" data-recup="3">`;
+
+        mediaCell.innerHTML = "0.00";
+
+        // Adiciona evento de mudança de nota
+        const notaInputs = row.querySelectorAll("input[type='number']");
+        notaInputs.forEach(input => {
+            input.addEventListener("input", () => {
+                const media = calcularMedia(aluno);
+                mediaCell.innerHTML = media.toFixed(2);
+            });
+        });
+    });
+}
+
+function calcularMedia(aluno) {
+    const notas = { 1: 0, 2: 0, 3: 0 };
+    const notaInputs = document.querySelectorAll(`input[data-aluno="${aluno}"]`);
+
+    notaInputs.forEach(input => {
+        const nota = parseFloat(input.value) || 0;
+        if (input.dataset.recup) {
+            notas[input.dataset.recup] = Math.max(notas[input.dataset.recup], nota);
+        } else {
+            notas[input.dataset.nota] = nota;
+        }
+    });
+
+    const media = (notas[1] + notas[2] + notas[3]) / 3;
+    return media;
+}
+
+cursoSelect.addEventListener("change", updateAlunos);
+turmaSelect.addEventListener("change", updateAlunos);
+
+updateAlunos();
+
+function navigateTo(url) {
+    if (url) {
+        window.location.href = url;
+    }
+}
+</script>
+
+</body>
+</html>

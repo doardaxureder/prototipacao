@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurar Bolsas de Ensino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group select {
+            width: calc(100% - 16px);
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .scholarships {
+            margin-top: 20px;
+        }
+
+        .scholarship {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .navigation img {
+            width: 24px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .navigation button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .navigation button:hover {
+            background-color: #282828;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function showScholarships() {
+            const campus = document.getElementById('campus').value;
+            const scholarships = document.getElementById('scholarships');
+
+            scholarships.innerHTML = '';
+
+            if (campus === 'Campus 1') {
+                scholarships.innerHTML += '<div class="scholarship"><h3>Bolsa de Bioquimica</h3><p>Blablabla.</p></div>';
+                scholarships.innerHTML += '<div class="scholarship"><h3>Bolsa de Artes</h3><p>BlaBlaBla.</p></div>';
+            } else if (campus === 'Campus 2') {
+                scholarships.innerHTML += '<div class="scholarship"><h3>Bolsa de Geografia</h3><p>Blabka.</p></div>';
+                scholarships.innerHTML += '<div class="scholarship"><h3>Bolsa de engordar</h3><p>Bem-vindos a bolsa de engordar, como cinco big macs por dia e ganha 730 reais por mês</p></div>';
+            }
+            else if (campus === 'Campus 3') {
+                scholarships.innerHTML += '<div class="scholarship"><h3>Bolsa de Geografia</h3><p>Blabka.</p></div>';
+                scholarships.innerHTML += '<div class="scholarship"><h3>Bolsa de engordar</h3><p>Bem-vindos a bolsa de engordar, como cinco big macs por dia e ganha 730 reais por mês</p></div>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Procurar Bolsas de Extensão</h2>
+        <form>
+            <div class="form-group">
+                <label for="campus">Campus:</label>
+                <select id="campus" name="campus" onchange="showScholarships()" required>
+                    <option value="">Selecione um Campus</option>
+                    <option value="Campus 1">Campus Rio Grande </option>
+                    <option value="Campus 2">Campus Sorocaba</option>
+                    <option value="Campus 3">Campus Santa Catarina</option>
+                    <!-- Adicione todos os outros institutos federais aqui -->
+                </select>
+            </div>
+        </form>
+        
+        <div id="scholarships" class="scholarships"></div>
+
+        <div class="navigation">
+            <a href="Pagina_Inicial_aluno.html"><img src="Images/botao-home.png" alt="Ícone de casa"></a>
+            <a id="log-out" href="index.html"><button>Log out</button></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerenciamento de Bolsa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .navigation {
+      text-align: end;
+      margin-bottom: 10px;
+    }
+    .navigation a {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .navigation img {
+      width: 24px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .navigation button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .navigation button:hover {
+      background-color: #282828;
+      transform: scale(1.05);
+    }
+    .menu {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .menu select, .menu a, .menu button {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px 10px;
+      flex-grow: 1; /* Permitir que cresçam proporcionalmente */
+      max-width: calc(20% - 20px); /* Ajuste o valor conforme necessário para evitar que os elementos saiam da tela */
+      box-sizing: border-box;
+    }
+    .menu select {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #menu-button, #logout-button {
+      background-color: #fff;
+      color: #333;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px; /* Espaçamento entre os botões */
+    }
+    #menu-button:hover, #logout-button:hover {
+      background-color: #282828; /* Altera a cor de fundo ao passar o mouse */
+      color: #fff;
+      transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    }
+    #logout-button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    #home-button {
+      position: absolute;
+      right: 60px;
+      top: 10px;
+    }
+    h2 {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container, .list-container {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .form-container label, .list-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .form-container input[type="text"], .form-container input[type="number"], .form-container textarea {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    .list-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .list-container th, .list-container td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .list-container th {
+      background-color: #f4f4f4;
+    }
+    button[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+    button[type="submit"]:hover {
+      background-color: #282828;
+      transform: scale(1.05);
+    }
+    .add-new-button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+    .add-new-button:hover {
+      background-color: #282828;
+      transform: scale(1.05);
+    }
+    .new-scholarship-form {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navigation">
+        <a href="Paginal_Inicial_professor.html"><img src="Images/botao-home.png" alt="Ícone de casa"></a>
+        <a id="log-out" href="index.html"><button>Log out</button></a>
+    </div>
+    <div class="menu">
+        <select onchange="navigateTo(this.value)">
+           
+           <option>Alunos</option>
+           <option value="Comunicacao_Com_Aluno.html">Comunicação com Aluno</option>
+           <option value="Disponilizar_Material.html">Disponilizar Material</option>
+           <option value="Lancamento_Notas.html">Lançamento de Notas</option>
+           <option value="Lancamento_Frequencia.html">Lançamento de Frequencia</option>
+           <option value="Horarios_Aula.html">Horários de Aula</option>
+       </select>
+       <select onchange="navigateTo(this.value)">
+           <option>Aulas</option>
+           <option value="Atividades_Alunos.html">Atividades e Exercicios</option>
+           <option value="Correcacao_Atividades.html">Correção e Feedback de Atividades</option>
+
+       </select>
+       
+       <select onchange="navigateTo(this.value)">
+           <option>Parte Tecnica</option>
+           <option>Bibliografia</option>
+           <option>Gerenciamento de Fóruns</option>
+           <option>Suporte Técnico     </option>
+       </select>
+       <select onchange="navigateTo(this.value)">
+           <option>Bolsas/Estagios</option>
+           <option value="Gerenciamento_Bolsas.html">Gerenciamento Bolsa</option>
+           <option value="Gerenciamento_Estagio.html">Gerenciamento Estagios</option>
+       </select>
+      
+       
+                   <a href="https://biblioteca.ifrs.edu.br/" target="_blank" id="menu-button">Ir para a biblioteca</a>
+
+           <button id="menu-button">Mudar Senha </button>
+
+    </div>
+
+    <h2>Gerenciamento de Bolsa</h2>
+
+    <!-- Formulário para adicionar ou editar uma bolsa -->
+    <div class="form-container">
+      <h3>Editar Bolsa</h3>
+      <form id="scholarship-form">
+        <label for="scholarship-name">Nome da Bolsa:</label>
+        <input type="text" id="scholarship-name" name="scholarship-name" placeholder="Nome da bolsa" required>
+
+        <label for="scholarship-amount">Valor da Bolsa:</label>
+        <input type="number" id="scholarship-amount" name="scholarship-amount" placeholder="Valor da bolsa" required>
+
+        <label for="scholarship-description">Descrição:</label>
+        <textarea id="scholarship-description" name="scholarship-description" placeholder="Descrição da bolsa" required></textarea>
+
+        <button type="submit">Salvar Bolsa</button>
+      </form>
+    </div>
+
+    <!-- Botão para adicionar uma nova bolsa -->
+    <button class="add-new-button" onclick="toggleNewScholarshipForm()">Solicitar Nova Bolsa</button>
+
+    <!-- Novo Formulário para adicionar uma bolsa -->
+    <div class="new-scholarship-form">
+      <h3>Adicionar Nova Bolsa</h3>
+      <form id="new-scholarship-form">
+        <label for="new-scholarship-name">Nome da Bolsa:</label>
+        <input type="text" id="new-scholarship-name" name="new-scholarship-name" placeholder="Nome da bolsa" required>
+
+        <label for="new-scholarship-amount">Valor da Bolsa:</label>
+        <input type="number" id="new-scholarship-amount" name="new-scholarship-amount" placeholder="Valor da bolsa" required>
+
+        <label for="new-scholarship-description">Descrição:</label>
+        <textarea id="new-scholarship-description" name="new-scholarship-description" placeholder="Descrição da bolsa" required></textarea>
+
+        <button type="submit">Enviar Solicitação de Bolsa</button>
+      </form>
+    </div>
+
+    <!-- Tabela para listar as bolsas existentes -->
+    <div class="list-container">
+      <h3>Lista de Bolsas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome da Bolsa</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bolsas de Programação</td>
+            <td>R$ 1000</td>
+            <td><button>Editar</button> <button>Excluir</button></td>
+          </tr>
+          <tr>
+            <td>Bolsas de ajuda nas aulas de Programação</td>
+            <td>R$ 500</td>
+            <td><button>Editar</button> <button>Excluir</button></td>
+          </tr>
+          <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(url) {
+      if (url) {
+        window.location.href = url;
+      }
+    }
+
+    function toggleNewScholarshipForm() {
+      const form = document.querySelector('.new-scholarship-form');
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.getElementById('scholarship-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Lógica para adicionar ou editar a bolsa
+      alert('Bolsa salva com sucesso!');
+    });
+
+    document.getElementById('new-scholarship-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Nova bolsa adicionada com sucesso!');
+      // Adicione aqui a lógica para salvar os dados da nova bolsa no backend
+    });
+  </script>
+</body>
+</html>
